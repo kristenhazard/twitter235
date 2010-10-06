@@ -14,17 +14,9 @@ class ApplicationController < ActionController::Base
       @oauth ||= Twitter::OAuth.new(TWITTER_CONFIG['oauth_consumer_key'], TWITTER_CONFIG['oauth_consumer_secret'], :sign_in => true)
     end
 
-
-    # def client
-    #   oauth.authorize_from_access(session[:atoken], session[:asecret])
-    #   Twitter::Base.new(oauth)
-    # end
-    
-    # helper_method :client
-
     def force_sign_in(exception)
       reset_session
       flash[:error] = 'Seems your credentials are not good anymore. Please sign in again.'
-      redirect_to new_session_path
+      redirect_to users_path
     end
 end

@@ -2027,3 +2027,887 @@ Rendered timelines/_status (2.5ms)
 Rendered timelines/_status (2.5ms)
 Rendered timelines/_status (2.9ms)
 Completed in 1527ms (View: 57, DB: 0) | 200 OK [http://localhost/?user_id=1]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-06 15:42:55) [GET]
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 13ms (View: 8, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-06 15:42:58) [GET]
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing TimelinesController#index (for 127.0.0.1 at 2010-10-06 15:43:00) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering timelines/index
+Rendered timelines/_status (2.7ms)
+Rendered timelines/_status (2.6ms)
+Rendered timelines/_status (2.5ms)
+Rendered timelines/_status (2.5ms)
+Rendered timelines/_status (2.5ms)
+Rendered timelines/_status (2.7ms)
+Rendered timelines/_status (2.7ms)
+Rendered timelines/_status (2.5ms)
+Rendered timelines/_status (2.3ms)
+Rendered timelines/_status (2.5ms)
+Rendered timelines/_status (2.5ms)
+Rendered timelines/_status (2.5ms)
+Rendered timelines/_status (2.4ms)
+Rendered timelines/_status (2.4ms)
+Rendered timelines/_status (2.6ms)
+Rendered timelines/_status (2.5ms)
+Rendered timelines/_status (2.6ms)
+Rendered timelines/_status (2.7ms)
+Rendered timelines/_status (2.5ms)
+Rendered timelines/_status (2.5ms)
+Completed in 243ms (View: 56, DB: 0) | 200 OK [http://localhost/timelines?user_id=1]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-06 15:44:17) [GET]
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-10-06 15:44:19) [GET]
+Rendering template within layouts/users
+Rendering users/new
+Completed in 77ms (View: 72, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-10-06 15:44:25) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"UaUO2cbdGH1TPvBtBiGtsJTKEnak5YJGptaD3FwgmSs=", "user"=>{"tw_token"=>"", "tw_screen_name"=>"timesarrow", "tw_secret"=>""}}
+  [4;36;1mUser Create (21.5ms)[0m   [0;1mINSERT INTO "users" ("tw_token", "created_at", "tw_screen_name", "updated_at", "tw_secret") VALUES('', '2010-10-06 22:44:25', 'timesarrow', '2010-10-06 22:44:25', '')[0m
+Redirected to http://localhost:3000/users/2
+Completed in 30ms (DB: 22) | 302 Found [http://localhost/users]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-10-06 15:44:25) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/users
+Rendering users/show
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/users/2]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-06 15:44:27) [GET]
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 14ms (View: 10, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#authorize_twitter (for 127.0.0.1 at 2010-10-06 15:44:29) [GET]
+  Parameters: {"id"=>"2"}
+
+NameError (undefined local variable or method `oauth' for #<UsersController:0x23f1068>):
+  app/controllers/users_controller.rb:75:in `authorize_twitter'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (37.9ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-06 15:45:18) [GET]
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 14ms (View: 10, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#authorize_twitter (for 127.0.0.1 at 2010-10-06 15:45:19) [GET]
+  Parameters: {"id"=>"2"}
+Redirected to http://api.twitter.com/oauth/authenticate?oauth_token=jVtlimQ0pYt2rvtY0KhqPTyiJxVWOB4trlkkHq5P8
+Completed in 163ms (DB: 0) | 302 Found [http://localhost/users/2/authorize_twitter]
+
+
+Processing UsersController#finalize (for 127.0.0.1 at 2010-10-06 15:45:20) [GET]
+  Parameters: {"oauth_token"=>"jVtlimQ0pYt2rvtY0KhqPTyiJxVWOB4trlkkHq5P8", "oauth_verifier"=>"SeQafes6DE6mjbAOmhbKY0dLw4Sv5evH4TgkLpY2Bk"}
+
+NameError (undefined local variable or method `current_user' for #<UsersController:0x251e1d4>):
+  app/controllers/users_controller.rb:90:in `finalize'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (34.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-10-06 15:50:40) [GET]
+
+SyntaxError (/Users/kristenhazard/work/twitter235/app/controllers/users_controller.rb:72: syntax error, unexpected kEND, expecting $end):
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (32.3ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#new (for 127.0.0.1 at 2010-10-06 15:50:41) [GET]
+
+SyntaxError (/Users/kristenhazard/work/twitter235/app/controllers/users_controller.rb:72: syntax error, unexpected kEND, expecting $end):
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (94.5ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-10-06 15:50:44) [GET]
+
+SyntaxError (/Users/kristenhazard/work/twitter235/app/controllers/users_controller.rb:72: syntax error, unexpected kEND, expecting $end):
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (31.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-06 15:51:00) [GET]
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 14ms (View: 10, DB: 0) | 200 OK [http://localhost/users/]
+
+
+Processing UsersController#authorize_twitter (for 127.0.0.1 at 2010-10-06 15:51:03) [GET]
+  Parameters: {"id"=>"2"}
+Redirected to http://api.twitter.com/oauth/authenticate?oauth_token=qz5iUNVg9y4wv6xKGtUQCGVWVPyBzp1D5fxsElRs
+Completed in 10090ms (DB: 0) | 302 Found [http://localhost/users/2/authorize_twitter]
+
+
+Processing UsersController#finalize (for 127.0.0.1 at 2010-10-06 15:51:13) [GET]
+  Parameters: {"oauth_token"=>"qz5iUNVg9y4wv6xKGtUQCGVWVPyBzp1D5fxsElRs", "oauth_verifier"=>"7qVY48z4UBIIHcmLBvj1yAouI7WNT4eDI05QFVig9Q"}
+  [4;35;1mUser Load (20.7ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."tw_screen_name" = 'timesarrow') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-10-06 22:51:13', "tw_token" = '17849214-A18KQ3IF6yghxzf1mfo0ADPV3jABVhXE4hwc4rDtX', "tw_secret" = 'Vt6ZFf7qDS2ScornS9JnbvKNa5ZIkyZXEVx8Gq70qA' WHERE "id" = 2[0m
+
+NameError (undefined local variable or method `current_user' for #<UsersController:0x2347c98>):
+  app/controllers/users_controller.rb:69:in `finalize'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (91.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-06 15:51:49) [GET]
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 17ms (View: 12, DB: 0) | 200 OK [http://localhost/users/]
+
+
+Processing TimelinesController#index (for 127.0.0.1 at 2010-10-06 15:51:53) [GET]
+  Parameters: {"user_id"=>"2"}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering timelines/index
+Rendered timelines/_status (3.1ms)
+
+ActionView::TemplateError (undefined method `status_url' for #<ActionView::Base:0x244a438>) on line #13 of app/views/timelines/_status.html.erb:
+10: 
+11:     <p class="actions">
+12:       <span title="# of followers" class="followers_count"><%= user.followers_count %></span>
+13:       <%= link_to image_tag('chat.gif'), status_url(:id => status.in_reply_to_status_id), :class => 'icon' unless status.in_reply_to_status_id.blank? %>
+14: 
+15: 
+16: 
+
+    app/views/timelines/_status.html.erb:13
+    app/views/timelines/index.html.erb:5
+    app/views/timelines/index.html.erb:4:in `each'
+    app/views/timelines/index.html.erb:4
+    /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (109.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TimelinesController#index (for 127.0.0.1 at 2010-10-06 15:54:15) [GET]
+  Parameters: {"user_id"=>"2"}
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering timelines/index
+Rendered timelines/_status (2.6ms)
+Rendered timelines/_status (2.2ms)
+Rendered timelines/_status (1.8ms)
+Rendered timelines/_status (1.8ms)
+Rendered timelines/_status (2.2ms)
+Rendered timelines/_status (2.2ms)
+Rendered timelines/_status (1.6ms)
+Rendered timelines/_status (1.7ms)
+Rendered timelines/_status (1.5ms)
+Rendered timelines/_status (1.7ms)
+Rendered timelines/_status (1.5ms)
+Rendered timelines/_status (1.5ms)
+Rendered timelines/_status (1.6ms)
+Rendered timelines/_status (1.6ms)
+Rendered timelines/_status (1.5ms)
+Rendered timelines/_status (1.6ms)
+Completed in 204ms (View: 37, DB: 0) | 200 OK [http://localhost/timelines?user_id=2]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-06 15:54:35) [GET]
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 14ms (View: 10, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing TimelinesController#index (for 127.0.0.1 at 2010-10-06 15:54:38) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering timelines/index
+Rendered timelines/_status (1.8ms)
+Rendered timelines/_status (1.6ms)
+Rendered timelines/_status (3.4ms)
+Rendered timelines/_status (2.0ms)
+Rendered timelines/_status (2.2ms)
+Rendered timelines/_status (1.8ms)
+Rendered timelines/_status (2.0ms)
+Rendered timelines/_status (1.8ms)
+Rendered timelines/_status (1.5ms)
+Rendered timelines/_status (1.6ms)
+Rendered timelines/_status (1.6ms)
+Rendered timelines/_status (1.7ms)
+Rendered timelines/_status (1.7ms)
+Rendered timelines/_status (1.6ms)
+Rendered timelines/_status (1.6ms)
+Rendered timelines/_status (1.6ms)
+Rendered timelines/_status (1.6ms)
+Rendered timelines/_status (1.7ms)
+Rendered timelines/_status (1.9ms)
+Rendered timelines/_status (1.8ms)
+Completed in 270ms (View: 43, DB: 0) | 200 OK [http://localhost/timelines?user_id=1]
+
+
+Processing TimelinesController#index (for 127.0.0.1 at 2010-10-06 15:59:22) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+
+NameError (undefined local variable or method `user' for #<TimelinesController:0x23cc380>):
+  lib/twitter/authentication_helpers.rb:25:in `sign_in'
+  app/controllers/timelines_controller.rb:4:in `index'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (33.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TimelinesController#index (for 127.0.0.1 at 2010-10-06 16:00:01) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering timelines/index
+Rendered timelines/_status (1.8ms)
+Rendered timelines/_status (1.6ms)
+Rendered timelines/_status (1.7ms)
+Rendered timelines/_status (1.6ms)
+Rendered timelines/_status (1.6ms)
+Rendered timelines/_status (1.6ms)
+Rendered timelines/_status (1.6ms)
+Rendered timelines/_status (1.6ms)
+Rendered timelines/_status (1.5ms)
+Rendered timelines/_status (1.7ms)
+Rendered timelines/_status (1.6ms)
+Rendered timelines/_status (1.6ms)
+Rendered timelines/_status (64.6ms)
+Rendered timelines/_status (1.9ms)
+Rendered timelines/_status (1.6ms)
+Rendered timelines/_status (1.7ms)
+Rendered timelines/_status (1.7ms)
+Rendered timelines/_status (1.7ms)
+Rendered timelines/_status (1.6ms)
+Rendered timelines/_status (1.7ms)
+
+ActionView::TemplateError (undefined local variable or method `session_url' for #<ActionView::Base:0x22d37f8>) on line #25 of app/views/layouts/application.html.erb:
+22:           <%= link_to 'Home', root_url %></li>
+23: 
+24:         <li>
+25:           <%= link_to 'Logout', session_url, :method => :delete %></li>
+26:       </ul>
+27:     <%- end -%>
+28:   </div>
+
+    app/views/layouts/application.html.erb:25
+    /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (41.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-06 16:00:05) [GET]
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 15ms (View: 11, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing TimelinesController#index (for 127.0.0.1 at 2010-10-06 16:00:07) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering timelines/index
+Rendered timelines/_status (1.8ms)
+Rendered timelines/_status (1.6ms)
+Rendered timelines/_status (1.6ms)
+Rendered timelines/_status (1.7ms)
+Rendered timelines/_status (1.9ms)
+Rendered timelines/_status (2.2ms)
+Rendered timelines/_status (2.9ms)
+Rendered timelines/_status (1.9ms)
+Rendered timelines/_status (1.5ms)
+Rendered timelines/_status (1.7ms)
+Rendered timelines/_status (1.7ms)
+Rendered timelines/_status (1.7ms)
+Rendered timelines/_status (1.7ms)
+Rendered timelines/_status (1.7ms)
+Rendered timelines/_status (1.6ms)
+Rendered timelines/_status (1.6ms)
+Rendered timelines/_status (1.7ms)
+Rendered timelines/_status (1.6ms)
+Rendered timelines/_status (1.6ms)
+Rendered timelines/_status (1.8ms)
+
+ActionView::TemplateError (undefined local variable or method `session_url' for #<ActionView::Base:0x23364ac>) on line #25 of app/views/layouts/application.html.erb:
+22:           <%= link_to 'Home', root_url %></li>
+23: 
+24:         <li>
+25:           <%= link_to 'Logout', session_url, :method => :delete %></li>
+26:       </ul>
+27:     <%- end -%>
+28:   </div>
+
+    app/views/layouts/application.html.erb:25
+    /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (43.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TimelinesController#index (for 127.0.0.1 at 2010-10-06 16:01:39) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering timelines/index
+Rendered timelines/_status (1.8ms)
+Rendered timelines/_status (1.7ms)
+Rendered timelines/_status (1.6ms)
+Rendered timelines/_status (1.7ms)
+Rendered timelines/_status (1.8ms)
+Rendered timelines/_status (1.7ms)
+Rendered timelines/_status (1.7ms)
+Rendered timelines/_status (1.6ms)
+Rendered timelines/_status (1.5ms)
+Rendered timelines/_status (1.7ms)
+Rendered timelines/_status (2.2ms)
+Rendered timelines/_status (1.9ms)
+Rendered timelines/_status (2.5ms)
+Rendered timelines/_status (2.0ms)
+Rendered timelines/_status (1.6ms)
+Rendered timelines/_status (1.6ms)
+Rendered timelines/_status (1.7ms)
+Rendered timelines/_status (1.6ms)
+Rendered timelines/_status (1.6ms)
+Rendered timelines/_status (1.6ms)
+Completed in 397ms (View: 46, DB: 0) | 200 OK [http://localhost/timelines?user_id=1]
+
+
+Processing TimelinesController#index (for 127.0.0.1 at 2010-10-06 16:04:20) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering timelines/index
+Rendered timelines/_status (1.8ms)
+Rendered timelines/_status (1.6ms)
+Rendered timelines/_status (1.6ms)
+Rendered timelines/_status (1.6ms)
+Rendered timelines/_status (1.7ms)
+Rendered timelines/_status (1.7ms)
+Rendered timelines/_status (1.9ms)
+Rendered timelines/_status (2.1ms)
+Rendered timelines/_status (2.0ms)
+Rendered timelines/_status (1.8ms)
+Rendered timelines/_status (1.7ms)
+Rendered timelines/_status (1.8ms)
+Rendered timelines/_status (1.6ms)
+Rendered timelines/_status (1.5ms)
+Rendered timelines/_status (1.8ms)
+Rendered timelines/_status (1.7ms)
+Rendered timelines/_status (1.7ms)
+Rendered timelines/_status (1.8ms)
+Rendered timelines/_status (2.1ms)
+Rendered timelines/_status (2.2ms)
+Completed in 245ms (View: 47, DB: 0) | 200 OK [http://localhost/timelines?user_id=1]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-06 16:04:25) [GET]
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 16ms (View: 12, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing TimelinesController#index (for 127.0.0.1 at 2010-10-06 16:04:27) [GET]
+  Parameters: {"user_id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering timelines/index
+Rendered timelines/_status (1.8ms)
+Rendered timelines/_status (2.0ms)
+Rendered timelines/_status (2.0ms)
+Rendered timelines/_status (1.6ms)
+Rendered timelines/_status (1.6ms)
+Rendered timelines/_status (1.6ms)
+Rendered timelines/_status (1.5ms)
+Rendered timelines/_status (1.6ms)
+Rendered timelines/_status (1.8ms)
+Rendered timelines/_status (1.6ms)
+Rendered timelines/_status (1.6ms)
+Rendered timelines/_status (1.9ms)
+Rendered timelines/_status (1.7ms)
+Rendered timelines/_status (1.5ms)
+Rendered timelines/_status (1.8ms)
+Rendered timelines/_status (1.6ms)
+Completed in 318ms (View: 34, DB: 0) | 200 OK [http://localhost/timelines?user_id=2]
+
+
+Processing TimelinesController#index (for 127.0.0.1 at 2010-10-06 16:04:42) [GET]
+  Parameters: {"user_id"=>"2"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering timelines/index
+Rendered timelines/_status (1.8ms)
+Rendered timelines/_status (1.5ms)
+Rendered timelines/_status (1.7ms)
+Rendered timelines/_status (1.6ms)
+Rendered timelines/_status (1.5ms)
+Rendered timelines/_status (1.6ms)
+Rendered timelines/_status (1.5ms)
+Rendered timelines/_status (1.4ms)
+Rendered timelines/_status (1.7ms)
+Rendered timelines/_status (1.6ms)
+Rendered timelines/_status (1.5ms)
+Rendered timelines/_status (1.7ms)
+Rendered timelines/_status (1.8ms)
+Rendered timelines/_status (1.7ms)
+Rendered timelines/_status (1.5ms)
+Rendered timelines/_status (1.8ms)
+Completed in 1075ms (View: 32, DB: 0) | 200 OK [http://localhost/timelines?user_id=2]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-06 16:04:45) [GET]
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+Completed in 15ms (View: 11, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing TimelinesController#index (for 127.0.0.1 at 2010-10-06 16:05:03) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering timelines/index
+Rendered timelines/_status (1.9ms)
+Rendered timelines/_status (1.6ms)
+Rendered timelines/_status (1.8ms)
+Rendered timelines/_status (1.6ms)
+Rendered timelines/_status (1.6ms)
+Rendered timelines/_status (1.7ms)
+Rendered timelines/_status (1.7ms)
+Rendered timelines/_status (1.7ms)
+Rendered timelines/_status (1.9ms)
+Rendered timelines/_status (1.8ms)
+Rendered timelines/_status (1.7ms)
+Rendered timelines/_status (1.7ms)
+Rendered timelines/_status (1.7ms)
+Rendered timelines/_status (1.9ms)
+Rendered timelines/_status (1.6ms)
+Rendered timelines/_status (1.6ms)
+Rendered timelines/_status (1.6ms)
+Rendered timelines/_status (1.7ms)
+Rendered timelines/_status (1.7ms)
+Rendered timelines/_status (1.8ms)
+Completed in 1811ms (View: 41, DB: 0) | 200 OK [http://localhost/timelines?user_id=1]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-06 16:05:10) [GET]
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+Completed in 16ms (View: 12, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-06 16:06:00) [GET]
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+Completed in 18ms (View: 14, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing TimelinesController#index (for 127.0.0.1 at 2010-10-06 16:06:15) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering timelines/index
+Rendered timelines/_status (4.5ms)
+Rendered timelines/_status (3.0ms)
+Rendered timelines/_status (3.0ms)
+Rendered timelines/_status (3.8ms)
+Rendered timelines/_status (3.1ms)
+Rendered timelines/_status (3.2ms)
+Rendered timelines/_status (4.6ms)
+Rendered timelines/_status (3.2ms)
+Rendered timelines/_status (2.8ms)
+Rendered timelines/_status (3.1ms)
+Rendered timelines/_status (3.0ms)
+Rendered timelines/_status (3.0ms)
+Rendered timelines/_status (2.9ms)
+Rendered timelines/_status (71.0ms)
+Rendered timelines/_status (3.1ms)
+Rendered timelines/_status (3.7ms)
+Rendered timelines/_status (3.9ms)
+Rendered timelines/_status (3.1ms)
+Rendered timelines/_status (3.1ms)
+Rendered timelines/_status (3.3ms)
+Completed in 360ms (View: 143, DB: 0) | 200 OK [http://localhost/timelines?user_id=1]
+
+
+Processing TimelinesController#index (for 127.0.0.1 at 2010-10-06 16:06:49) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering timelines/index
+Rendered timelines/_status (2.5ms)
+Rendered timelines/_status (1.6ms)
+Rendered timelines/_status (1.7ms)
+Rendered timelines/_status (1.9ms)
+Rendered timelines/_status (1.8ms)
+Rendered timelines/_status (1.6ms)
+Rendered timelines/_status (1.8ms)
+Rendered timelines/_status (1.8ms)
+Rendered timelines/_status (1.5ms)
+Rendered timelines/_status (1.7ms)
+Rendered timelines/_status (1.6ms)
+Rendered timelines/_status (1.7ms)
+Rendered timelines/_status (1.6ms)
+Rendered timelines/_status (1.6ms)
+Rendered timelines/_status (1.5ms)
+Rendered timelines/_status (1.7ms)
+Rendered timelines/_status (1.7ms)
+Rendered timelines/_status (1.6ms)
+Rendered timelines/_status (1.7ms)
+Rendered timelines/_status (1.7ms)
+Completed in 253ms (View: 47, DB: 0) | 200 OK [http://localhost/timelines?user_id=1]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-06 16:07:01) [GET]
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+Completed in 17ms (View: 12, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-06 16:09:41) [GET]
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+Completed in 18ms (View: 14, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-06 16:09:59) [GET]
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+Completed in 20ms (View: 15, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-06 16:10:15) [GET]
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+
+ActionView::TemplateError (wrong number of arguments (2 for 1)) on line #21 of app/views/users/index.html.erb:
+18:               %>
+19:     </td> 
+20:     <td><%=h user.tw_screen_name %></td>
+21:     <td><%=h truncate(user.tw_token), :length => 10 %></td>
+22:     <td><%=h truncate(user.tw_secret) %></td>
+23:     <td><%= link_to image_tag("/images/twitter_connect.png"), authorize_twitter_user_path(user) %></td>
+24:     <td><%= link_to 'Show', user %></td>
+
+    app/views/users/index.html.erb:21:in `h'
+    app/views/users/index.html.erb:21
+    app/views/users/index.html.erb:12:in `each'
+    app/views/users/index.html.erb:12
+    /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (53.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-06 16:10:37) [GET]
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+Completed in 18ms (View: 14, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-06 16:10:55) [GET]
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+Completed in 19ms (View: 14, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-06 16:12:06) [GET]
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+Completed in 33ms (View: 28, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-06 16:17:29) [GET]
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+Completed in 18ms (View: 14, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-10-06 16:17:34) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-10-06 16:18:01) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Completed in 13ms (View: 9, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-06 16:18:03) [GET]
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+Completed in 15ms (View: 10, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing TimelinesController#index (for 127.0.0.1 at 2010-10-06 16:18:06) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+
+Timeout::Error (execution expired):
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/timeout.rb:60:in `rbuf_fill'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/net/protocol.rb:134:in `rbuf_fill'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/net/protocol.rb:116:in `readuntil'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/net/protocol.rb:126:in `readline'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/net/http.rb:2020:in `read_status_line'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/net/http.rb:2009:in `read_new'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/net/http.rb:1050:in `request'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/net/http.rb:1037:in `request'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/net/http.rb:543:in `start'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/net/http.rb:1035:in `request'
+  oauth (0.4.3) lib/oauth/consumer.rb:164:in `request'
+  oauth (0.4.3) lib/oauth/tokens/consumer_token.rb:25:in `request'
+  oauth (0.4.3) lib/oauth/tokens/access_token.rb:11:in `request'
+  oauth (0.4.3) lib/oauth/tokens/access_token.rb:24:in `get'
+  twitter (0.9.12) [v] lib/twitter/request.rb:48:in `perform_get'
+  twitter (0.9.12) [v] lib/twitter/request.rb:42:in `send'
+  twitter (0.9.12) [v] lib/twitter/request.rb:42:in `perform'
+  twitter (0.9.12) [v] lib/twitter/request.rb:6:in `get'
+  twitter (0.9.12) [v] lib/twitter/base.rb:379:in `perform_get'
+  twitter (0.9.12) [v] lib/twitter/base.rb:20:in `friends_timeline'
+  app/controllers/timelines_controller.rb:6:in `index'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /Users/kristenhazard/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (45.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-10-06 16:19:34) [GET]
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+Completed in 16ms (View: 11, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing TimelinesController#index (for 127.0.0.1 at 2010-10-06 16:19:35) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering timelines/index
+Rendered timelines/_status (2.0ms)
+Rendered timelines/_status (2.5ms)
+Rendered timelines/_status (1.8ms)
+Rendered timelines/_status (6.0ms)
+Rendered timelines/_status (1.9ms)
+Rendered timelines/_status (1.6ms)
+Rendered timelines/_status (61.8ms)
+Rendered timelines/_status (1.9ms)
+Rendered timelines/_status (1.5ms)
+Rendered timelines/_status (1.8ms)
+Rendered timelines/_status (1.7ms)
+Rendered timelines/_status (1.7ms)
+Rendered timelines/_status (1.6ms)
+Rendered timelines/_status (1.6ms)
+Rendered timelines/_status (1.6ms)
+Rendered timelines/_status (1.6ms)
+Rendered timelines/_status (1.8ms)
+Rendered timelines/_status (1.7ms)
+Rendered timelines/_status (1.7ms)
+Rendered timelines/_status (1.8ms)
+Completed in 3025ms (View: 107, DB: 0) | 200 OK [http://localhost/timelines?user_id=1]
+
+
+Processing TimelinesController#index (for 127.0.0.1 at 2010-10-06 16:20:08) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering timelines/index
+Rendered timelines/_status (1.8ms)
+Rendered timelines/_status (1.9ms)
+Rendered timelines/_status (1.7ms)
+Rendered timelines/_status (1.6ms)
+Rendered timelines/_status (1.6ms)
+Rendered timelines/_status (1.6ms)
+Rendered timelines/_status (1.7ms)
+Rendered timelines/_status (1.7ms)
+Rendered timelines/_status (1.5ms)
+Rendered timelines/_status (1.6ms)
+Rendered timelines/_status (1.6ms)
+Rendered timelines/_status (1.6ms)
+Rendered timelines/_status (1.6ms)
+Rendered timelines/_status (1.6ms)
+Rendered timelines/_status (1.5ms)
+Rendered timelines/_status (1.6ms)
+Rendered timelines/_status (1.7ms)
+Rendered timelines/_status (1.7ms)
+Rendered timelines/_status (1.9ms)
+Rendered timelines/_status (1.8ms)
+Completed in 1283ms (View: 46, DB: 0) | 200 OK [http://localhost/timelines?user_id=1]

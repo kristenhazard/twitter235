@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Twitter App</title>
+    <title>dot429 proof of concept twitter app</title>
     <%= stylesheet_link_tag 'common' %>
     <%= stylesheet_link_tag 'login' unless signed_in? %>
     
@@ -14,15 +14,12 @@
 <body>
 <div id="header">
   <div id="header_inner">
-    <h3><%= link_to "I'd Tweet That", root_url %></h3>
-    
+    <h3>dot429 proof of concept app</h3>
     <%- if signed_in? -%>     
       <ul id="nav">
         <li class="<%= 'active' if request.request_uri == '/' %>">
-          <%= link_to 'Home', root_url %></li>
-
-        <li>
-          <%= link_to 'Logout', session_url, :method => :delete %></li>
+          <%= link_to 'Users', users_path %>
+        </li>
       </ul>
     <%- end -%>
   </div>
@@ -31,19 +28,6 @@
 <div id="content">
   <div id="content_inner">    
     <%= display_flash_message %>
-    
-    <%- if signed_in? -%>
-      <div id="update">
-        <%- form_tag timelines_url, :method => :post do -%>
-          <%= hidden_return_to_current %>
-          <%= hidden_field_tag 'in_reply_to_status_id' %>
-          <span id="countdown">140</span>
-          <label for="text">Drop a new tweet like it's hot!</label>
-          <%= text_area_tag 'text' %>
-          <%= submit_tag 'Update' %>
-        <%- end -%>
-      </div>
-    <%- end -%>
     
     <%= yield %>
   </div>
