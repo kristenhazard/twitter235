@@ -1,4 +1,4 @@
-<div id="statuses">
+<div id="tweets">
   <%- if signed_in? -%>
       <div id="update">
         <%- form_tag timelines_url, :method => :post do -%>
@@ -12,7 +12,7 @@
       </div>
     <%- end -%>
   <%- for tweet in @tweets -%>
-    <%= render :partial => 'timelines/status', :object => tweet %>
+    <%= render :partial => 'timelines/tweets', :object => tweet %>
   <%- end -%>
 </div>
 

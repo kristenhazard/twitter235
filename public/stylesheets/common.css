@@ -31,7 +31,7 @@ fieldset,img{border:0;}caption,th{text-align:left;}abbr,acronym {border:0;font-v
     div.error                       {border:1px solid #E3BEBE; background:#F6E8E8;}
     div.notice                      {border:1px solid #B9E3B9; background:#E8F6E8;}
   
-  div.status                        {float:left; display:inline; width:550px; border-bottom:1px solid #eee; padding:15px 0;}
+  div.tweet                        {float:left; display:inline; width:550px; border-bottom:1px solid #eee; padding:15px 0;}
     div.info                        {float:left; display:inline; width:240px; margin:0; font-size:11px; text-align:right;}
     div.info span.followers_count   {color:#999; position:relative; top:-4px; margin-right:3px;}
     div.info a.profile_image        {float:right; display:block; margin:0 30px;}

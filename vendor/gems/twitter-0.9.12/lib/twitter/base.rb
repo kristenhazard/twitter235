@@ -17,7 +17,7 @@ module Twitter
 
     # Options: since_id, max_id, count, page, since
     def friends_timeline(query={})
-      perform_get("/#{Twitter.api_version}/statuses/friends_timeline.json", :query => query)
+      perform_get("/#{Twitter.api_version}/statuses/friends_timeline.json?include_entities=true", :query => query)
     end
 
     # Options: id, user_id, screen_name, since_id, max_id, page, since, count
