@@ -1,0 +1,18 @@
+<p>
+  <b>Tw screen name:</b>
+  <%=h @user.tw_screen_name %>
+</p>
+
+<p>
+  <b>Tw token:</b>
+  <%=h @user.tw_token %>
+</p>
+
+<p>
+  <b>Tw secret:</b>
+  <%=h @user.tw_secret %>
+</p>
+
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

@@ -1,0 +1,10 @@
+#development:
+  oauth_consumer_key: "P0WQPsWThXEuhmhVQIjGYQ"
+  oauth_consumer_secret: "88yhds8MgirMe1bj0PBbJLQW2Ae7yScSS1zvQX7ktg"
+  oauth_callback: "http://localhost:3000/oauth_callback"
+# test:
+#   oauth_consumer_key: "UvdmO2sJPELl9RxshUsig"
+#   oauth_consumer_secret: "QRjczUdzEto3dbrFMLaTYKF2m5dZFVwly8pO5FEBPsA"
+# production:
+#   oauth_consumer_key: "UvdmO2sJPELl9RxshUsig"
+#   oauth_consumer_secret: "QRjczUdzEto3dbrFMLaTYKF2m5dZFVwly8pO5FEBPsA"

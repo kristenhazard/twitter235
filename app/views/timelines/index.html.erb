@@ -1,0 +1,8 @@
+i'm here
+
+<div id="statuses">
+  <%- for tweet in @tweets -%>
+    <%= render :partial => 'timelines/status', :object => tweet %>
+  <%- end -%>
+</div>
+

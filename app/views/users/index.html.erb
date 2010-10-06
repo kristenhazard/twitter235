@@ -1,0 +1,33 @@
+<h1>Listing users</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th>twitter screen name</th>
+    <th>twitter token</th>
+    <th>twitter secret</th>
+  </tr>
+
+<% @users.each do |user| %>
+  <tr>
+    <td><%= link_to 'go to feed', 
+              :controller => 'timelines', 
+              :user_id => user.id,
+              :action => 'index'
+              %>
+    </td> 
+    <td><%= link_to image_tag("/images/twitter_connect.png"), authorize_twitter_user_path(user) %></td>
+    <td><%=h user.tw_screen_name %></td>
+    <td><%=h user.tw_token %></td>
+    <td><%=h user.tw_secret %></td>
+    <td><%= link_to 'Show', user %></td>
+    <td><%= link_to 'Edit', edit_user_path(user) %></td>
+    <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New user', new_user_path %>

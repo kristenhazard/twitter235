@@ -1,0 +1,24 @@
+<h1>Editing user</h1>
+
+<% form_for(@user) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :tw_screen_name %><br />
+    <%= f.text_field :tw_screen_name %>
+  </p>
+  <p>
+    <%= f.label :tw_token %><br />
+    <%= f.text_field :tw_token %>
+  </p>
+  <p>
+    <%= f.label :tw_secret %><br />
+    <%= f.text_field :tw_secret %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @user %> |
+<%= link_to 'Back', users_path %>

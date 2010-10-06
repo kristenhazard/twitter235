@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  tw_screen_name: MyString
+  tw_token: MyString
+  tw_secret: MyString
+
+two:
+  tw_screen_name: MyString
+  tw_token: MyString
+  tw_secret: MyString

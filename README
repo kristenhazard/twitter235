@@ -1,0 +1,8 @@
+proof of concept twitter app for dot429 redesign utilizing twitter gem
+
+rails 2.3.5
+gems 
+sqlite3-ruby
+twitter
+
+MIT license
