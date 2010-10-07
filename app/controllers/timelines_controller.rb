@@ -20,6 +20,7 @@ class TimelinesController < ApplicationController
       link_second_image = link_doc.at_xpath('//*[contains(concat( " ", @class, " " ), concat( " ", "asset", " " ))]')
       # cnn
       link_third_image = link_doc.at_xpath('//*[contains(concat( " ", @class, " " ), concat( " ", "cnn_strylccimg300cntr", " " ))]//img')
+      link_fourth_image = link_doc.at_xpath('//*[contains(concat( " ", @class, " " ), concat( " ", "cnn_stryimg640captioned", " " ))]//img')
       
       # video
       link_object_video = link_doc.at_xpath('//object')
@@ -27,11 +28,14 @@ class TimelinesController < ApplicationController
       
       tweet.link_first_image = link_first_image
       tweet.link_second_image = link_second_image
-      tweet.link_third_image = link_third_image
+      tweet.link_third_image = link_third_image unless link_third_image.nil?
+      tweet.link_third_image = link_fourth_image if link_third_image.nil?
       
       #tweet.link_first_video = link_first_video
-      tweet.link_object_video = link_object_video
-      tweet.link_embed_video = link_embed_video
+      
+      
+      tweet.link_object_video = link_object_video unless link_object_video.nil?
+      tweet.link_object_video = link_embed_video if link_object_video.nil?
       
       #logger.debug link_doc
       
