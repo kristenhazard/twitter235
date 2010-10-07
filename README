@@ -4,6 +4,11 @@ rails 2.3.5
 gems 
 sqlite3-ruby
 twitter
+nokogiri
+*** 
+    you need to follow installation process for nokogiri before installing the gem: 
+    http://nokogiri.org/tutorials/installing_nokogiri.html
+***
 
 git clone
 rvm gemset create twitter235
@@ -13,6 +18,7 @@ gem install hashie
 gem install httparty
 gem install oauth
 gem install multi_json
+gem install nokogiri
 rake db:create
 rake db:migrate
 rake db:seed

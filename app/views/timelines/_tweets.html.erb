@@ -20,8 +20,10 @@
   <div class="meta-data">
     <%- if object.entities -%>
       <%- for tweet_url in object.entities.urls -%>
-        <p><%= link_to tweet_url.url %></p>
+        <p><%= link_to tweet_url.url, tweet_url.url %></p>
       <%- end -%>
     <%- end -%>
+    <p><%= object.link_first_image %><%= object.link_second_image %><%= object.link_third_image %></p>
+    <p><%= object.link_object_video %><%= object.link_embed_video %></p>
   </div>
 </div>
