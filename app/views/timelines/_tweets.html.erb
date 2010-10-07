@@ -1,10 +1,10 @@
 <%- tweeter = object.user.blank? ? object.sender : object.user -%>
 <div id="tweet_<%= object.id %>" class="tweet">
   <div class="info">
-    <%= link_to image_tag(tweeter.profile_image_url), user_url(tweeter.screen_name), :class => 'profile_image' %>
+    <%= link_to image_tag(tweeter.profile_image_url), "http://twitter.com/#{tweeter.screen_name}", :class => 'profile_image' %>
 
     <p class="who_when">
-      <%= link_to h(tweeter.screen_name), user_url(tweeter.screen_name) %><br />
+      <%= link_to h(tweeter.screen_name), "http://twitter.com/#{tweeter.screen_name}" %><br />
       <%= pretty_datetime Time.parse(object.created_at) %>
     </p>
 
@@ -15,5 +15,13 @@
 
   <div class="text">
     <%= auto_link(object.text, :target => '_blank', :username_url_base => "http://#{request.host_with_port}/users/") %>
+  </div>
+  
+  <div class="meta-data">
+    <%- if object.entities -%>
+      <%- for tweet_url in object.entities.urls -%>
+        <p><%= link_to tweet_url.url %></p>
+      <%- end -%>
+    <%- end -%>
   </div>
 </div>

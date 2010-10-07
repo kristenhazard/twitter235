@@ -4,6 +4,6 @@ class TimelinesController < ApplicationController
     session[:screen_name] = user.tw_screen_name
     client = user.tw_client
     @tweets = client.friends_timeline
-    #logger.debug @tweets.to_yaml
+    logger.debug @tweets.to_yaml
   end
 end

@@ -1,4 +1,8 @@
-/* @override http://localhost:3000/stylesheets/common.css?1286393428 */
+/* @override 
+	http://localhost:3000/stylesheets/common.css?1286393428
+	http://localhost:3000/stylesheets/common.css?1286408761
+	http://localhost:3000/stylesheets/common.css?1286409130
+*/
 
 @media screen, projection {  
   *{margin:0; padding:0;}
@@ -13,9 +17,9 @@ fieldset,img{border:0;}caption,th{text-align:left;}abbr,acronym {border:0;font-v
   /* Redeclarations */
   body                              {background:#eee; color:#333; font:13px/1.4 Helvetica, Arial, sans-serif;}
   h2                                {clear:left; font-size:18px; line-height:18px; padding:30px 0 10px;}
-  a:link                            {color:#090;}
-  a:visited                         {color:#8BD18B;}
-  a:hover                           {text-decoration:none; background:#090; color:#fff;}
+  a:link                            {color: #fc8017;}
+  a:visited                         {color: #fccc6a;}
+  a:hover                           {text-decoration:none; background:#fc8017; color:#fff;}
   form ul                           {margin:0; padding:0;}
   form ul li                        {list-style-type:none; margin:0 0 13px; padding:0;}
   form ul li label                  {display:block; margin:0 0 3px;}
@@ -31,7 +35,7 @@ fieldset,img{border:0;}caption,th{text-align:left;}abbr,acronym {border:0;font-v
     div.error                       {border:1px solid #E3BEBE; background:#F6E8E8;}
     div.notice                      {border:1px solid #B9E3B9; background:#E8F6E8;}
   
-  div.tweet                        {float:left; display:inline; width:550px; border-bottom:1px solid #eee; padding:15px 0;}
+  div.tweet                        {float:left; display:inline; width:1060px; border-bottom:1px solid #eee; padding:15px 0;}
     div.info                        {float:left; display:inline; width:240px; margin:0; font-size:11px; text-align:right;}
     div.info span.followers_count   {color:#999; position:relative; top:-4px; margin-right:3px;}
     div.info a.profile_image        {float:right; display:block; margin:0 30px;}
@@ -88,7 +92,7 @@ fieldset,img{border:0;}caption,th{text-align:left;}abbr,acronym {border:0;font-v
     #nav li.active a                {background:#fff; color:#333;}
     
   #content                          {float:left; display:inline; width:100%; background:#fff;}
-    #content_inner                  {width:550px; margin:0 auto;}
+    #content_inner                  {width:1060px; margin:0 auto;}
     
   #footer                           {float:left; display:inline; width:100%; padding:30px 0 0; background:#eee; border-top:1px solid #ccc;}
     #footer_inner                   {width:550px; margin:0 auto;}
@@ -102,3 +106,9 @@ fieldset,img{border:0;}caption,th{text-align:left;}abbr,acronym {border:0;font-v
 td {
 	padding: 5px;
 }
+
+div.meta-data {
+	float: left;
+	padding-left: 5px;
+}
+
