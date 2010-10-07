@@ -5,4 +5,25 @@ gems
 sqlite3-ruby
 twitter
 
+git clone
+rvm gemset create twitter235
+gem install -v=2.3.5 rails --no-ri --no-rdoc
+rake gems:install
+gem install hashie
+gem install httparty
+gem install oauth
+gem install multi_json
+rake db:create
+rake db:migrate
+rake db:seed
+
+script/server
+http://localhost:3000
+click on connect with twitter
+fill in credentials for 429trends
+click back
+click on feed
+
+for another feed you might need to use a different browser due to caching of the twitter authentication
+
 MIT license
