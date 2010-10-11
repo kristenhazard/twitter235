@@ -9,8 +9,12 @@ class TimelinesController < ApplicationController
     @tweets.each do |tweet|
         link_url = tweet.entities.urls[0].url if tweet.entities.urls[0]
         if link_url
-        link_doc = Nokogiri::HTML(open(URI.encode(link_url)))
-      
+        begin
+          link_doc = Nokogiri::HTML(open(URI.encode(link_url)))
+        rescue Timeout::Error
+          flash[:notice] = "timeout error on one of the links"
+        end
+        logger.debug link_doc
         # images
         # huffpo 
         link_image = link_doc.at_xpath('//*[(@id = "potd_block")]//img')
@@ -39,7 +43,7 @@ class TimelinesController < ApplicationController
         tweet.link_video = link_object_video unless link_object_video.nil?
         tweet.link_video = link_embed_video if link_object_video.nil?
       
-        #logger.debug link_doc
+        
       end
     end
   end
