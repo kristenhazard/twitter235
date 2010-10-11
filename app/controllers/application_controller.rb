@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
 
   helper :all
   protect_from_forgery
+  
   rescue_from Twitter::Unauthorized, :with => :force_sign_in
 
   private

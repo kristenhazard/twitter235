@@ -12,7 +12,7 @@ module Twitter
 
     # Options: since_id, max_id, count, page
     def home_timeline(query={})
-      perform_get("/#{Twitter.api_version}/statuses/home_timeline.json", :query => query)
+      perform_get("/#{Twitter.api_version}/statuses/home_timeline.json?include_entities=true", :query => query)
     end
 
     # Options: since_id, max_id, count, page, since
