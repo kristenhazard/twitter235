@@ -58,6 +58,7 @@ class UsersController < ApplicationController
     session['rsecret'] = nil
     
     profile = Twitter::Base.new(oauth).verify_credentials
+    logger.debug profile
     user    = User.find_by_tw_screen_name(profile.screen_name)
     
     user.update_attributes({
