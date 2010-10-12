@@ -12,9 +12,9 @@ class TimelinesController < ApplicationController
         begin
           link_doc = Nokogiri::HTML(open(URI.encode(link_url)))
         rescue Timeout::Error
-          flash[:notice] = "timeout error on one of the links"
+          flash[:notice] = "timeout error on one of the links: #{link_url}"
         rescue OpenURI::HTTPError
-          flash[:notice] = "bad link"
+          flash[:notice] = "bad link: #{link_url}"
         end
         logger.debug link_doc
         unless link_doc.nil?
@@ -52,6 +52,8 @@ class TimelinesController < ApplicationController
       end
     end
   end
+  
+  # these don't work yet, need to update reference to client based on user feed
   def favorites
     params[:page] ||= 1
     @favorites = client.favorites(:page => params[:page])
