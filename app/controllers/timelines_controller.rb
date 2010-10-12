@@ -16,7 +16,7 @@ class TimelinesController < ApplicationController
         rescue OpenURI::HTTPError
           flash[:notice] = "bad link: #{link_url}"
         end
-        logger.debug link_doc
+        #logger.debug link_doc
         unless link_doc.nil?
           # images
           # huffpo 
@@ -39,15 +39,31 @@ class TimelinesController < ApplicationController
           
           #tumblr
           link_image = link_doc.at_xpath('//*[(@id = "postContent")]//img') if link_image.nil?
+          
+          
+          # set tweet attributes
+          tweet.link_image = link_image
+          
+          logger.debug link_image.inspect
+          unless link_image.nil?
+            tweet.image_width = link_image["width"] if link_image.key?("width")
+            tweet.image_height = link_image["height"] if link_image.key?("height") 
+          end
       
           # video
           link_object_video = link_doc.at_xpath('//object')
           link_embed_video = link_doc.at_xpath('//embed')
     
-          # set tweet attributes
-          tweet.link_image = link_image
-          tweet.link_video = link_object_video unless link_object_video.nil?
-          tweet.link_video = link_embed_video if link_object_video.nil?
+          
+          link_video = link_object_video unless link_object_video.nil?
+          link_video = link_embed_video if link_object_video.nil?
+          
+          tweet.link_video = link_video
+          
+          unless link_video.nil?
+            tweet.video_width = link_video["width"] if link_video.key?("width")
+            tweet.video_height = link_video["height"] if link_video.key?("height") 
+          end
         end
       end
     end

@@ -23,7 +23,19 @@
         <p><%= link_to tweet_url.url, tweet_url.url %></p>
       <%- end -%>
     <%- end -%>
-    <p><%= object.link_image %></p>
-    <p><%= object.link_video %></p>
+    <%- if object.link_image -%>
+      <p>
+        <%= object.link_image %>
+        w<%= object.image_width %>
+        h<%= object.image_height %>
+      </p>
+    <%- end -%>
+    <%- if object.link_video -%>
+      <p>
+        <%= object.link_video %>
+        w<%= object.video_width %>
+        h<%= object.video_height %>
+      </p>
+    <%- end -%>
   </div>
 </div>
