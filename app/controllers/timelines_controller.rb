@@ -17,6 +17,8 @@ class TimelinesController < ApplicationController
           flash[:notice] = "bad link: #{link_url}"
         rescue Errno::ETIMEDOUT
           flash[:notice] =  "timeout: #{link_url}"
+        rescue RuntimeError
+          flash[:notice] =  "runtime error: #{link_url}"
         end
         #logger.debug link_doc
         unless link_doc.nil?
@@ -69,6 +71,7 @@ class TimelinesController < ApplicationController
           
           # content description
           link_desc = link_doc.at_css('.entry-body p')
+          link_desc = link_doc.at_css('.entry_body_text p') if link_desc.nil?
           logger.debug link_desc.inspect
           tweet.link_desc = link_desc.children[0] unless link_desc.nil?
         end
