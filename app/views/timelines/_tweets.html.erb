@@ -20,22 +20,25 @@
   <div class="meta-data">
     <%- if object.entities -%>
       <%- for tweet_url in object.entities.urls -%>
-        <p><%= link_to tweet_url.url, tweet_url.url %></p>
+        <div><%= link_to tweet_url.url, tweet_url.url %></div>
       <%- end -%>
     <%- end -%>
     <%- if object.link_image -%>
-      <p>
+      <div class="link-img">
         <%= object.link_image %>
         w<%= object.image_width %>
         h<%= object.image_height %>
-      </p>
+      </div>
     <%- end -%>
     <%- if object.link_video -%>
-      <p>
+      <div class="link-video">
         <%= object.link_video %>
         w<%= object.video_width %>
         h<%= object.video_height %>
-      </p>
+      </div>
     <%- end -%>
+    <div class="link-desc">
+      <%= object.link_desc %>
+    </div>
   </div>
 </div>

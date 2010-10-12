@@ -3,6 +3,7 @@
 	http://localhost:3000/stylesheets/common.css?1286408761
 	http://localhost:3000/stylesheets/common.css?1286409130
 	http://localhost:3000/stylesheets/common.css?1286410468
+	http://localhost:3000/stylesheets/common.css?1286896216
 */
 
 @media screen, projection {  
@@ -115,5 +116,11 @@ th {
 div.meta-data {
 	float: left;
 	padding-left: 5px;
+	width: 500px;
+}
+
+.link-desc {
+	float: left;
+	width: 200px;
 }
 

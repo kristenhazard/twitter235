@@ -15,6 +15,8 @@ class TimelinesController < ApplicationController
           flash[:notice] = "timeout error on one of the links: #{link_url}"
         rescue OpenURI::HTTPError
           flash[:notice] = "bad link: #{link_url}"
+        rescue Errno::ETIMEDOUT
+          flash[:notice] =  "timeout: #{link_url}"
         end
         #logger.debug link_doc
         unless link_doc.nil?
@@ -44,7 +46,8 @@ class TimelinesController < ApplicationController
           # set tweet attributes
           tweet.link_image = link_image
           
-          logger.debug link_image.inspect
+          #logger.debug link_image.inspect
+          
           unless link_image.nil?
             tweet.image_width = link_image["width"] if link_image.key?("width")
             tweet.image_height = link_image["height"] if link_image.key?("height") 
@@ -53,7 +56,6 @@ class TimelinesController < ApplicationController
           # video
           link_object_video = link_doc.at_xpath('//object')
           link_embed_video = link_doc.at_xpath('//embed')
-    
           
           link_video = link_object_video unless link_object_video.nil?
           link_video = link_embed_video if link_object_video.nil?
@@ -64,6 +66,11 @@ class TimelinesController < ApplicationController
             tweet.video_width = link_video["width"] if link_video.key?("width")
             tweet.video_height = link_video["height"] if link_video.key?("height") 
           end
+          
+          # content description
+          link_desc = link_doc.at_css('.entry-body p')
+          logger.debug link_desc.inspect
+          tweet.link_desc = link_desc.children[0] unless link_desc.nil?
         end
       end
     end
