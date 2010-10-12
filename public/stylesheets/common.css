@@ -2,6 +2,7 @@
 	http://localhost:3000/stylesheets/common.css?1286393428
 	http://localhost:3000/stylesheets/common.css?1286408761
 	http://localhost:3000/stylesheets/common.css?1286409130
+	http://localhost:3000/stylesheets/common.css?1286410468
 */
 
 @media screen, projection {  
@@ -104,6 +105,10 @@ fieldset,img{border:0;}caption,th{text-align:left;}abbr,acronym {border:0;font-v
 }
 
 td {
+	padding: 5px;
+}
+
+th {
 	padding: 5px;
 }
 
