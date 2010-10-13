@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :rss_feeds
+
   map.root :controller => 'users'
   map.resources :timelines
   map.resources :users, :member => { :authorize_twitter => :get }

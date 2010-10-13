@@ -17,8 +17,11 @@
     <h3>dot429 proof of concept app</h3>
     <%- if signed_in? -%>     
       <ul id="nav">
-        <li class="<%= 'active' if request.request_uri == '/' %>">
-          <%= link_to 'Users', users_path %>
+        <li>
+          <%= link_to 'Twitter Feeds', users_path %>
+        </li>
+        <li>
+          <%= link_to 'RSS Feeds', rss_feeds_path %>
         </li>
       </ul>
     <%- end -%>

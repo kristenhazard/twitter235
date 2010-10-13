@@ -11,6 +11,7 @@ Rails::Initializer.run do |config|
   config.gem "sqlite3-ruby", :lib => "sqlite3"
   config.gem "twitter"
   config.gem "nokogiri"
+  config.gem "feedzirra"
 
   # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
   # Run "rake -D time" for a list of tasks for finding time zone names.

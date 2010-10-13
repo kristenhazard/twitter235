@@ -1,0 +1,39 @@
+<div id="tweets">
+<p>
+  <b>Name:</b>
+  <%=h @rss_feed.name %>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%=h @rss_feed.url %>
+</p>
+
+
+<% for entry in @feed.entries %>
+    <div class="tweet">
+  <div class="info">
+    
+    <p class="who_when">
+      <%=h entry.author %><br />
+      <%=h entry.published %>
+    </p>
+
+  </div>
+
+  <div class="text">
+    <%= link_to h(entry.title), entry.url %>
+    <%= auto_link(entry.summary, :target => '_blank', :username_url_base => "http://#{request.host_with_port}/users/") %>
+  </div>
+  
+  <div class="meta-data">
+    
+  </div>
+</div>
+<% end %>
+
+
+<%= link_to 'Edit', edit_rss_feed_path(@rss_feed) %> |
+<%= link_to 'Back', rss_feeds_path %>
+</div>
+

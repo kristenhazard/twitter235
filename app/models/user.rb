@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
-  
+  # user is really a twitter feed at this point, user is misnamed, think of user as twitter_feed
   # twitter
-  def twitter_user?
+  def tw_user?
     tw_token.present? && tw_secret.present?
   end
   
