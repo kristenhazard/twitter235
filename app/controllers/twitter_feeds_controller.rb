@@ -94,7 +94,7 @@ class TwitterFeedsController < ApplicationController
   end
 
   def create
-    @twitter_feed = TwitterFeed.new(params[:id])
+    @twitter_feed = TwitterFeed.new(params[:twitter_feed])
     if @twitter_feed.save
       flash[:notice] = 'TwitterFeed was successfully created.'
       redirect_to(twitter_feeds_url) 
