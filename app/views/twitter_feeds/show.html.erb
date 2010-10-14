@@ -5,7 +5,7 @@
 <div id="tweets">
   <%- if signed_in? -%>
       <div id="update">
-        <%- form_tag timelines_url, :method => :post do -%>
+        <%- form_tag create_tweet_twitter_feed_url(@twitter_feed), :method => :post do -%>
           <%= hidden_return_to_current %>
           <%= hidden_field_tag 'in_reply_to_status_id' %>
           <span id="countdown">140</span>

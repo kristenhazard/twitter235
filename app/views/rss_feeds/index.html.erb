@@ -13,11 +13,7 @@
 <% @rss_feeds.each do |rss_feed| %>
   <tr>    
     <td>
-      <%= link_to 'FEED', 
-              :controller => 'timelines', 
-              :rss_feed_id => rss_feed.id,
-              :action => 'index'
-      %>
+      <%= link_to 'FEED', rss_feed %>
     </td> 
     <td><%=h rss_feed.name %></td>
     <td><%=h rss_feed.url %></td>

@@ -94,7 +94,7 @@ class TwitterFeedsController < ApplicationController
   end
 
   def create
-    @twitter_feed = TwitterFeed.new(params[:twitter_feed])
+    @twitter_feed = TwitterFeed.new(params[:id])
     if @twitter_feed.save
       flash[:notice] = 'TwitterFeed was successfully created.'
       redirect_to(twitter_feeds_url) 
@@ -158,6 +158,37 @@ class TwitterFeedsController < ApplicationController
       flash[:notice] = "Twitter tried to authorize #{profile.screen_name} but that doesn't match #{twitter_feed.tw_screen_name}. This is caused by browser caching. Go to twitter.com and sign out."
     end
     redirect_to(twitter_feeds_url) 
+  end
+  
+  # these don't work yet, need to update reference to client based on user feed
+  def favorites
+    params[:page] ||= 1
+    @favorites = client.favorites(:page => params[:page])
+  end
+
+  def create_tweet
+    @twitter_feed = TwitterFeed.find(params[:id])
+    logger.debug @twitter_feed.to_yaml
+    client = @twitter_feed.tw_client
+    logger.info client.inspect
+    options = {}
+    options.update(:in_reply_to_status_id => params[:in_reply_to_status_id]) if params[:in_reply_to_status_id].present?
+
+    tweet = client.update(params[:text], options)
+    flash[:notice] = "Got it! Tweet ##{tweet.id} created."
+    return_to_or root_url
+  end
+
+  def fav
+    flash[:notice] = "Tweet fav'd. May not show up right away due to API latency."
+    client.favorite_create(params[:id])
+    return_to_or root_url
+  end
+
+  def unfav
+    flash[:notice] = "Tweet unfav'd. May not show up right away due to API latency."
+    client.favorite_destroy(params[:id])
+    return_to_or root_url
   end
   
 end
