@@ -83,6 +83,12 @@ class TwitterFeedsController < ApplicationController
         end
       end
     end
+    
+    respond_to do |format|
+      format.html
+      format.json { render :layout => false ,
+                           :json => @tweets.to_json }
+    end
   end
 
   def new
