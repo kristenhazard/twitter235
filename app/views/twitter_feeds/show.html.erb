@@ -1,0 +1,21 @@
+<p>
+  <b>twitter screen name:</b>
+  <%=h @twitter_feed.tw_screen_name %>
+</p>
+<div id="tweets">
+  <%- if signed_in? -%>
+      <div id="update">
+        <%- form_tag timelines_url, :method => :post do -%>
+          <%= hidden_return_to_current %>
+          <%= hidden_field_tag 'in_reply_to_status_id' %>
+          <span id="countdown">140</span>
+          <label for="text">Add to timeline</label>
+          <%= text_area_tag 'text' %>
+          <%= submit_tag 'Update' %>
+        <%- end -%>
+      </div>
+    <%- end -%>
+  <%- for tweet in @tweets -%>
+    <%= render :partial => 'twitter_feeds/tweets', :object => tweet %>
+  <%- end -%>
+</div>
