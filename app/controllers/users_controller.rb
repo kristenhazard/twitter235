@@ -40,46 +40,5 @@ class UsersController < ApplicationController
     @user.destroy
     redirect_to(users_url) 
   end
-  
-  # twitter
-  def authorize_twitter
-    oauth.set_callback_url(finalize_twitter_url)
-    
-    session['rtoken']  = oauth.request_token.token
-    session['rsecret'] = oauth.request_token.secret
-    user = User.find(params[:id])
-    session['user_screen_name'] = user.tw_screen_name
-    logger.debug session['user_screen_name']
-    
-    redirect_to oauth.request_token.authorize_url
-  end
-  
-  def finalize
-    oauth.authorize_from_request(session['rtoken'], session['rsecret'], params[:oauth_verifier])
-    
-    session['rtoken']  = nil
-    session['rsecret'] = nil
-    
-    profile = Twitter::Base.new(oauth).verify_credentials
-    logger.debug profile.screen_name
-    requested_user_screen_name = session['user_screen_name']
-    
-    if profile.screen_name == requested_user_screen_name
-      user = User.find_by_tw_screen_name(profile.screen_name)
-    
-      if user
-        user.update_attributes({
-          :tw_screen_name => profile.screen_name,
-          :tw_token => oauth.access_token.token, 
-          :tw_secret => oauth.access_token.secret,
-        })
-        flash[:notice] = "Success! Twitter was authorized for #{profile.screen_name} and mapped to #{user.tw_screen_name}."
-      else
-        flash[:notice] = "Twitter tried to authorize #{profile.screen_name} but that doesn't match a user in our system. This is caused by browser caching. Go to twitter.com and sign out."
-      end
-    else
-      flash[:notice] = "Twitter tried to authorize #{profile.screen_name} but that doesn't match #{user.tw_screen_name}. This is caused by browser caching. Go to twitter.com and sign out."
-    end
-    redirect_to(users_url) 
-  end
+
 end

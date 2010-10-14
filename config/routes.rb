@@ -1,10 +1,12 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :twitter_feeds, :member => { :authorize => :get }
+
   map.resources :rss_feeds
 
   map.root :controller => 'users'
   map.resources :timelines
-  map.resources :users, :member => { :authorize_twitter => :get }
-  map.finalize_twitter 'user/finalize', :controller => 'users', :action => 'finalize'
+  map.resources :users
+  map.finalize_twitter 'twitter_feed/finalize', :controller => 'twitter_feeds', :action => 'finalize'
 
   # Install the default routes as the lowest priority.
   # Note: These default routes make all actions in every controller accessible via GET requests. You should

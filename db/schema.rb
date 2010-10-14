@@ -9,11 +9,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101013203253) do
+ActiveRecord::Schema.define(:version => 20101013235859) do
 
   create_table "rss_feeds", :force => true do |t|
     t.string   "name"
     t.string   "url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "twitter_feeds", :force => true do |t|
+    t.string   "tw_screen_name"
+    t.string   "tw_token"
+    t.string   "tw_secret"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
