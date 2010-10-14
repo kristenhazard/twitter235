@@ -1,3 +1,5 @@
+rails -v 2.3.5
 nokogiri
 sqlite3-ruby
 twitter
+feedzirra

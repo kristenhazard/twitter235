@@ -21,7 +21,7 @@ class RssFeedsController < ApplicationController
     @rss_feed = RssFeed.new(params[:rss_feed])
     if @rss_feed.save
       flash[:notice] = 'RssFeed was successfully created.'
-      redirect_to(@rss_feed) 
+      redirect_to(rss_feeds_url) 
     else
       render :action => "new" 
     end
@@ -31,7 +31,7 @@ class RssFeedsController < ApplicationController
     @rss_feed = RssFeed.find(params[:id])
     if @rss_feed.update_attributes(params[:rss_feed])
       flash[:notice] = 'RssFeed was successfully updated.'
-      redirect_to(@rss_feed) 
+      redirect_to(rss_feeds_url) 
     else
       render :action => "edit" 
     end
