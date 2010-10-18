@@ -6,7 +6,9 @@ class RssFeedsController < ApplicationController
 
   def show
     @rss_feed = RssFeed.find(params[:id])
-    @feed = Feedzirra::Feed.fetch_and_parse(@rss_feed.url)
+    #@feed = Feedzirra::Feed.fetch_and_parse(@rss_feed.url)
+    FeedEntry.update_from_feed(@rss_feed)
+    #@feed = @rss_feed.FeedEntry.all
   end
 
   def new

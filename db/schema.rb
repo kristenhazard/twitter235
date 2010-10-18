@@ -9,7 +9,24 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101013235859) do
+ActiveRecord::Schema.define(:version => 20101018165117) do
+
+  create_table "feed_entries", :force => true do |t|
+    t.string   "name"
+    t.text     "summary"
+    t.string   "url"
+    t.datetime "published_at"
+    t.string   "guid"
+    t.string   "image_url"
+    t.integer  "image_width"
+    t.integer  "image_height"
+    t.string   "video_url"
+    t.integer  "video_width"
+    t.integer  "video_height"
+    t.integer  "rss_feed_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "rss_feeds", :force => true do |t|
     t.string   "name"
