@@ -6,10 +6,10 @@ class CreateFeedEntries < ActiveRecord::Migration
       t.string :url
       t.datetime :published_at
       t.string :guid
-      t.string :image_url
+      t.text :image_url
       t.integer :image_width
       t.integer :image_height
-      t.string :video_url
+      t.text :video_url
       t.integer :video_width
       t.integer :video_height
       t.integer :rss_feed_id
