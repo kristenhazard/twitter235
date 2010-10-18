@@ -26,12 +26,4 @@ ActiveRecord::Schema.define(:version => 20101013235859) do
     t.datetime "updated_at"
   end
 
-  create_table "users", :force => true do |t|
-    t.string   "tw_screen_name"
-    t.string   "tw_token"
-    t.string   "tw_secret"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
 end
