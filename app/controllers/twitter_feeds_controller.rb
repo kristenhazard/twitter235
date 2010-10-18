@@ -15,72 +15,15 @@ class TwitterFeedsController < ApplicationController
     @tweets.each do |tweet|
       link_url = tweet.entities.urls[0].url if tweet.entities.urls[0]
       unless link_url.nil?
-        begin
-          link_doc = Nokogiri::HTML(open(URI.encode(link_url)))
-        rescue Timeout::Error
-          flash[:notice] = "timeout error on one of the links: #{link_url}"
-        rescue OpenURI::HTTPError
-          flash[:notice] = "bad link: #{link_url}"
-        rescue Errno::ETIMEDOUT
-          flash[:notice] =  "timeout: #{link_url}"
-        rescue RuntimeError
-          flash[:notice] =  "runtime error: #{link_url}"
-        end
-        #logger.debug link_doc
-        unless link_doc.nil?
-          # images
-          # huffpo 
-          link_image = link_doc.at_xpath('//*[(@id = "potd_block")]//img')
-          link_image = link_doc.at_xpath('//*[(@id = "entry_12345")]//img') if link_image.nil?
-      
-          # ?
-          link_image = link_doc.at_xpath('//*[contains(concat( " ", @class, " " ), concat( " ", "asset", " " ))]') if link_image.nil?
-          # cnn
-          link_image = link_doc.at_xpath('//*[contains(concat( " ", @class, " " ), concat( " ", "cnn_strylccimg300cntr", " " ))]//img') if link_image.nil?
-          link_image = link_doc.at_xpath('//*[contains(concat( " ", @class, " " ), concat( " ", "cnn_stryimg640captioned", " " ))]//img') if link_image.nil?
-      
-          #hrc
-          link_image = link_doc.at_xpath('//*[contains(concat( " ", @class, " " ), concat( " ", "size-large", " " ))]') if link_image.nil?
-          link_image = link_doc.at_xpath('//*[contains(concat( " ", @class, " " ), concat( " ", "size-medium", " " ))]') if link_image.nil?
-          link_image = link_doc.at_xpath('//*[contains(concat( " ", @class, " " ), concat( " ", "size-full", " " ))]') if link_image.nil?
-      
-          # out
-          link_image = link_doc.at_xpath('//*[(@id = "column2detail")]//img') if link_image.nil?
-          
-          #tumblr
-          link_image = link_doc.at_xpath('//*[(@id = "postContent")]//img') if link_image.nil?
-          
-          
-          # set tweet attributes
-          tweet.link_image = link_image
-          
-          #logger.debug link_image.inspect
-          
-          unless link_image.nil?
-            tweet.image_width = link_image["width"] if link_image.key?("width")
-            tweet.image_height = link_image["height"] if link_image.key?("height") 
-          end
-      
-          # video
-          link_object_video = link_doc.at_xpath('//object')
-          link_embed_video = link_doc.at_xpath('//embed')
-          
-          link_video = link_object_video unless link_object_video.nil?
-          link_video = link_embed_video if link_object_video.nil?
-          
-          tweet.link_video = link_video
-          
-          unless link_video.nil?
-            tweet.video_width = link_video["width"] if link_video.key?("width")
-            tweet.video_height = link_video["height"] if link_video.key?("height") 
-          end
-          
-          # content description
-          link_desc = link_doc.at_css('.entry-body p')
-          link_desc = link_doc.at_css('.entry_body_text p') if link_desc.nil?
-          logger.debug link_desc.inspect
-          tweet.link_desc = link_desc.children[0] unless link_desc.nil?
-        end
+        ld = LinkDoc.new(link_url)
+        tweet.image_url = ld.image_url
+        tweet.image_width = ld.image_width
+        tweet.image_height = ld.image_height
+        tweet.video_url = ld.video_url
+        tweet.video_width = ld.video_width
+        tweet.video_height = ld.video_height
+        tweet.link_doc_desc = ld.link_doc_desc
+        flash[:notice] = ld.link_doc_error
       end
     end
     
