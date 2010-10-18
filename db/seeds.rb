@@ -6,4 +6,4 @@
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Major.create(:name => 'Daley', :city => cities.first)
 
-users = User.create([{:tw_screen_name => '429trends'}])
+users = TwitterFeed.create([{:tw_screen_name => '429trends'}])
