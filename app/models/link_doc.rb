@@ -16,6 +16,8 @@ class LinkDoc
       @link_doc_error =  "timeout: #{link_url}"
     rescue RuntimeError
       @link_doc_error =  "runtime error: #{link_url}"
+    rescue URI::InvalidURIError
+      @link_doc_error =  "invalid uri error: #{link_url}"
     end
     
     #logger.debug link_doc
